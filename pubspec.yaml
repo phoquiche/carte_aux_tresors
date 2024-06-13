@@ -1,0 +1,25 @@
+name: carte_aux_tresors
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.2 <4.0.0'
+
+dependencies:
+  firebase_core: ^3.0.0
+  google_maps_flutter: ^2.6.1
+  location: ^6.0.2
+  cloud_firestore: ^5.0.0
+  flutter:
+    sdk: flutter
+  firebase_auth: ^5.0.0
+   
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true

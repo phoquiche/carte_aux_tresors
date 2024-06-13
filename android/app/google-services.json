@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1026131083980",
+    "project_id": "carte-aux-tresors-fe1b7",
+    "storage_bucket": "carte-aux-tresors-fe1b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026131083980:android:e4f479351140c856d9f869",
+        "android_client_info": {
+          "package_name": "com.example.carte_aux_tresors"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5YwXnkkAjXLtM-MsNE-_XKDU5VSIc6Rk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
