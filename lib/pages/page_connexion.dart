@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'page_principale.dart';
 
+//CREDENTIALS COMPTE TEST: email: test@imt.fr mdp: test24
+
 class PageConnexion extends StatefulWidget {
   const PageConnexion({super.key});
 
