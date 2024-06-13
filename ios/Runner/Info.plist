@@ -53,5 +53,9 @@
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+ 	<string>Enable TreasureMapp to access your camera to capture your photo</string>
+ 	<key>NSMicrophoneUsageDescription</key>
+ 	<string>Enable TreasureMapp to access mic to record your voice</string>
 </dict>
 </plist>

@@ -1,11 +1,10 @@
-import 'package:carte_aux_tresors/pages/page_principale.dart';
+import 'package:carte_aux_tresors/pages/page_camera.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:location/location.dart';
 import 'package:carte_aux_tresors/modeles/lieu.dart';
 import 'package:carte_aux_tresors/modeles/gestion_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'dart:io';
+
 
 class Dialogue extends StatefulWidget {
   final bool estNouveau;
@@ -26,6 +25,14 @@ class _DialogueState extends State<Dialogue> {
      supprimerLieu(String idLieu) {
       GestionFirestore.supprimerLieu(idLieu);
     }
+    Widget afficherImage(Lieu lieu) {
+  if (lieu.img != null && lieu.img!.isNotEmpty) {
+    return Image.file(File(lieu.img!));
+  } else {
+    return Container();
+  }
+}
+
 
     if (widget.estNouveau){
       final TextEditingController nomController = TextEditingController();
@@ -50,6 +57,7 @@ class _DialogueState extends State<Dialogue> {
               decoration: const InputDecoration(labelText: 'Longitude'),
               keyboardType: TextInputType.number,
             ),
+            
           ],
         ),
       ),
@@ -117,6 +125,16 @@ class _DialogueState extends State<Dialogue> {
               decoration: const InputDecoration(labelText: 'Longitude'),
               keyboardType: TextInputType.number,
             ),
+
+            afficherImage(widget.lieu!),
+            IconButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => PageCamera(lieu: widget.lieu!)),
+                );
+              },
+              icon: const Icon(Icons.camera_alt),
+            ),
           ],
         ),
       ),
@@ -164,7 +182,7 @@ class _DialogueState extends State<Dialogue> {
 
     }
     else{
-      return AlertDialog(
+      return const AlertDialog(
       );
     }
 

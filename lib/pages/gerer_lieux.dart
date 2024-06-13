@@ -2,13 +2,12 @@ import 'package:carte_aux_tresors/pages/dialogue_lieu.dart';
 import 'package:flutter/material.dart';
 import 'package:carte_aux_tresors/modeles/lieu.dart';
 import 'package:carte_aux_tresors/modeles/gestion_firestore.dart';
-import 'page_principale.dart';  
 import 'package:firebase_auth/firebase_auth.dart';
 
 class DetailLieux extends StatefulWidget {
 
 
-  const DetailLieux({Key? key}) : super(key: key);
+  const DetailLieux({super.key});
 
   @override
   _DetailLieuxState createState() => _DetailLieuxState();
@@ -44,9 +43,9 @@ class _DetailLieuxState extends State<DetailLieux>{
         direction: DismissDirection.endToStart,
         background: Container(
           color: Colors.red,
-          child: Icon(Icons.delete, color: Colors.white),
           alignment: Alignment.centerRight,
-          padding: EdgeInsets.only(right: 16.0),
+          padding: const EdgeInsets.only(right: 16.0),
+          child: const Icon(Icons.delete, color: Colors.white),
         ),
         onDismissed: (direction) {
           setState(() {
@@ -58,7 +57,7 @@ class _DetailLieuxState extends State<DetailLieux>{
           title: Text(_lieux[index].designation),
           subtitle: Text('Latitude: ${_lieux[index].latitude} - Longitude: ${_lieux[index].longitude}'),
           trailing: IconButton(
-            icon: Icon(Icons.edit),
+            icon: const Icon(Icons.edit),
             onPressed: () {
           showDialog(
             context: context,

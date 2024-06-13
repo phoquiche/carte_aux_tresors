@@ -4,12 +4,12 @@ class Lieu{
   String designation;
   double latitude;
   double longitude;
-  String img;
+  String? img;
   String? adresse;
   String? dateVisite;
 
 
-  Lieu({required this.idLieu, required this.idUtilisateur, required this.designation, required this.latitude, required this.longitude, required this.img, this.adresse, this.dateVisite});
+  Lieu({required this.idLieu, required this.idUtilisateur, required this.designation, required this.latitude, required this.longitude,this.img, this.adresse, this.dateVisite});
 
   getUid(){
     return idUtilisateur;

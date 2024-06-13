@@ -31,7 +31,7 @@ class _PageConnexionState extends State<PageConnexion> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Connexion'),
+        title: const Text('Connexion'),
       ),
       body: Form(
         child: SingleChildScrollView(
@@ -39,12 +39,12 @@ class _PageConnexionState extends State<PageConnexion> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               saisirEmail(),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               saisirMdp(),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               boutonPrincipal(),
               boutonSecondaire(),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               messageValidation(),
             ],
           ),
@@ -59,7 +59,7 @@ class _PageConnexionState extends State<PageConnexion> {
       child: TextFormField(
         controller: txtEmail,
         keyboardType: TextInputType.emailAddress,
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           hintText: 'Adresse mail',
           icon: Icon(Icons.mail),
         ),
@@ -73,7 +73,7 @@ class _PageConnexionState extends State<PageConnexion> {
       child: TextFormField(
         controller: txtMdp,
         keyboardType: TextInputType.visiblePassword,
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           hintText: 'Mot de passe',
           icon: Icon(Icons.lock),
         ),
@@ -86,7 +86,6 @@ class _PageConnexionState extends State<PageConnexion> {
       onPressed: () {
         soumettre();
       },
-      child: Text(_estConnectable ? 'Se connecter' : 'S\'inscrire'),
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.0),
@@ -94,6 +93,7 @@ class _PageConnexionState extends State<PageConnexion> {
         elevation: 3,
         backgroundColor: Colors.blue,
       ),
+      child: Text(_estConnectable ? 'Se connecter' : 'S\'inscrire'),
     );
   }
 
@@ -112,10 +112,10 @@ class _PageConnexionState extends State<PageConnexion> {
     if (_message != null) {
       return Text(
         _message!,
-        style: TextStyle(color: Colors.red),
+        style: const TextStyle(color: Colors.red),
       );
     } else {
-      return SizedBox.shrink();
+      return const SizedBox.shrink();
     }
   }
 

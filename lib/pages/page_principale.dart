@@ -143,18 +143,24 @@ class _PagePrincipaleState extends State<PagePrincipale> {
               itemBuilder: (BuildContext context) {
                 return [
                   const PopupMenuItem(
-                    child: Text('Refresh'),
                     value: 'Refresh',
+                    child: Text('Refresh'),
                   ),
                   const PopupMenuItem(
-                    child: Text('Details Lieu'),
                     value: 'details',
+                    child: Text('Details Lieu'),
+                  ),
+                  const PopupMenuItem(
+                    value: 'deconnexion',
+                    child: Text('Deconnexion'),
                   ),
                 ];
               },
               onSelected: (value) async {
                 if (value == 'refresh') {
-                  _initialiserMarqueur();
+                  setState(() {
+                    _initialiserMarqueur();
+                  });
                 }
                 else if (value == 'details') {
                   
@@ -166,7 +172,10 @@ class _PagePrincipaleState extends State<PagePrincipale> {
               setState(() {
                 _initialiserMarqueur();
               });
-                }
+              }
+              else if (value == 'deconnexion') {
+                deconnecter();
+              }
               },
             ),
           ]
